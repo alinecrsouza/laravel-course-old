@@ -26,7 +26,13 @@ class RouteServiceProvider extends ServiceProvider
         //
 
         parent::boot();
-    }
+        
+        //a Category instance will be injected into the route. So, for example, 
+        //a request to category/1 will inject the Category instance from the 
+        //database which has an ID of 1.
+        Route::model('category', 'CodeCommerce\Category');
+    }    
+    
 
     /**
      * Define the routes for the application.
